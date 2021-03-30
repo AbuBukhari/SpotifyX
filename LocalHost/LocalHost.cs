@@ -16,14 +16,10 @@ namespace SpotifyX_Console.LocalHost
         static HttpListener _httpListener = new HttpListener();
         public static void host()
         {
-            Console.WriteLine("Starting server...");
             _httpListener.Prefixes.Add("http://localhost:8080/");
             _httpListener.Start();
             Thread _responseThread = new Thread(ResponseThread);
             _responseThread.Start(); // start the response thread
-
- 
-
         }
         public static HttpListenerContext context;
         public static string Context = "";
