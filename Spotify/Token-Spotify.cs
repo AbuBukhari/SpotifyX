@@ -39,6 +39,7 @@ namespace SpotifyX_Console.Spotify
                 string responseString = responseContent.ReadAsStringAsync().Result;
                 Console.WriteLine(responseString);
                 Program.auth = Regex.Match(responseString, "{\"access_token\":\"(.*?)\",").Groups[1].Value.ToString();
+                Program.refreshToken = Regex.Match(responseString, "\"refresh_token\":\"(.*?)\",").Groups[1].Value.ToString();
             }
         }
     }
