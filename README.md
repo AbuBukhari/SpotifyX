@@ -3,7 +3,7 @@
  
  Trello: https://trello.com/b/JSg4ao5B/spotifyx
  
- Languages: Html/css and javascript
+ Languages: Fully C#
 
 ## What it will do: 
 It will show your Favorite number/artist on spotify!
