@@ -1,6 +1,6 @@
 # About SpotifyX
 State: Heavely under developement!
-Languages: c# (Maybe javascript)
+Languages: Html/css and javascript
 
 ## What it will do: 
 It will show your Favorite number/artist on spotify!
