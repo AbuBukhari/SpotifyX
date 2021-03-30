@@ -1,5 +1,6 @@
 # About SpotifyX
-State: Heavely under developement!
+State: Heavely under developement! 
+Trello: https://trello.com/b/JSg4ao5B/spotifyx
 Languages: Html/css and javascript
 
 ## What it will do: 
