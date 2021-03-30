@@ -6,6 +6,6 @@ Languages: c# (Maybe javascript)
 It will show your Favorite number/artist on spotify!
 
 ## How it will work:
-It will most of the time connect to api of spotify to get the information about you.
+It will most of the time ask the api of spotify to get the information about you.
 
 
