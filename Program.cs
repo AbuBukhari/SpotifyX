@@ -22,6 +22,7 @@ namespace SpotifyX_Console
         public static string Token = "";
         public static string Token_user = "";
         public static string auth = "";
+        public static string refreshToken = "";
         public static string Parse(string orignal, string left, string right)
         {
             return orignal.Split(new string[]
