@@ -14,8 +14,8 @@ namespace SpotifyX_Console.Spotify
     {
         class SpotifyAuthentication
         {
-            public string clientID = "dcf7c38d3cb0434fb4fdb6ac3f736f04";
-            public string clientSecret = "e44267b0951a4cceb370ac97fc3ec8ef";
+            public string clientID = "";
+            public string clientSecret = "";
             public string redirectURL = "http://localhost:8080/";
         }
         public static void Access()
@@ -23,7 +23,7 @@ namespace SpotifyX_Console.Spotify
             SpotifyAuthentication sAuth = new SpotifyAuthentication();
             using (HttpClient client = new HttpClient())
             {
-                Console.WriteLine(Environment.NewLine + "Your basic bearer: " + Convert.ToBase64String(System.Text.ASCIIEncoding.ASCII.GetBytes(sAuth.clientID + ":" + sAuth.clientSecret)));
+              
                 client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", Convert.ToBase64String(System.Text.ASCIIEncoding.ASCII.GetBytes(sAuth.clientID + ":" + sAuth.clientSecret)));
 
                 FormUrlEncodedContent formContent = new FormUrlEncodedContent(new[]
