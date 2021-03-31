@@ -5,6 +5,8 @@
  
  Languages: Fully C#
 
+ Hours worked on: 5/6 hours
+
 ## What it will do: 
 It will show your Favorite artist on spotify!
 
