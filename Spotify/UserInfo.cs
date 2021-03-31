@@ -32,6 +32,8 @@ namespace SpotifyX_Console.Spotify
                     string name = Regex.Match(responseFromServer, "\"display_name\" : \"(.*?)\",").Groups[1].Value.ToString();
                     string country = Regex.Match(responseFromServer, "\"country\" : \"(.*?)\",").Groups[1].Value.ToString();
                     bool premium = Regex.Match(responseFromServer, "\"product\" : \"premium\",").Success;
+                    Console.Title = $"[SpotifyX]  Name: {name} | Country: {country} - Created by Vanix";
+                    Logger.Logger.Logg($"Writing {name}'s info on console.");
                     Console.WriteLine("--------------------------", Color.FromArgb(30, 215, 96));
                     Console.WriteLine("Spotify Name: " + name, Color.FromArgb(30, 215, 96));
                     Console.WriteLine("Country: " + country, Color.FromArgb(30, 215, 96));

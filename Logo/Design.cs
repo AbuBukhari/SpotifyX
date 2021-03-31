@@ -13,6 +13,7 @@ namespace SpotifyX_Console.Logo
     {
         public static void Logo()
         {
+            Logger.Logger.Logg("Printing logo on console.");
             Console.WriteLine(@"
 
    _____             __  _ ____     _  __
