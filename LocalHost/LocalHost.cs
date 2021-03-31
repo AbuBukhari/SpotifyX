@@ -7,6 +7,9 @@ using System.Net;
 using System.Threading;
 using System.Web;
 using System.Text.RegularExpressions;
+using Colorful;
+using System.Drawing;
+using Console = Colorful.Console;
 
 namespace SpotifyX_Console.LocalHost
 {
@@ -16,11 +19,27 @@ namespace SpotifyX_Console.LocalHost
         static HttpListener _httpListener = new HttpListener();
         public static void host()
         {
+            Logger.Logger.Logg("Started a localhost server");
             _httpListener.Prefixes.Add("http://localhost:8080/");
             _httpListener.Start();
             Thread _responseThread = new Thread(ResponseThread);
             _responseThread.Start(); // start the response thread
+
+
+
         }
+
+        public static string Splitter(string orignal, string left, string right)
+        {
+            return orignal.Split(new string[]
+            {
+                left
+            }, StringSplitOptions.None)[1].Split(new string[]
+            {
+                right
+            }, StringSplitOptions.None)[0];
+        }
+
         public static HttpListenerContext context;
         public static string Context = "";
         static void ResponseThread()
@@ -30,9 +49,12 @@ namespace SpotifyX_Console.LocalHost
                 context = _httpListener.GetContext();
                 var request = context.Request;
                 Context = request.Url.PathAndQuery;
-                Program.Token_user = Program.Parse(Context, "/?code=", "&");
-                byte[] _responseArray = Encoding.UTF8.GetBytes("<html><head><title>Localhost server -- port 5000</title></head>" +
-                "<body>Welcome to the <strong>Localhost server</strong> -- <em> Please dont close the website for spotifyX</em></body></html>"); 
+                if (Context.Contains("/?code"))
+                {
+                    Program.Token_user = Splitter(Context, "/?code=", "&state");
+                }
+                byte[] _responseArray = Encoding.UTF8.GetBytes("<html><head><title>SpotifyX</title></head>" +
+                "<body> Please hold this on the background. You can exit this when your in the main menu - <strong>SpotifyX</strong></body></html>"); 
                 context.Response.OutputStream.Write(_responseArray, 0, _responseArray.Length); 
                 context.Response.KeepAlive = false; 
                 context.Response.Close(); 

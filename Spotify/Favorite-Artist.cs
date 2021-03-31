@@ -8,13 +8,13 @@ using System.IO;
 
 namespace SpotifyX_Console.Spotify
 {
-    class UserTrack
+    class Favorite_Track
     {
         public static void access()
         {
             try
             {
-                WebRequest request = WebRequest.Create("https://api.spotify.com/v1/me");
+                WebRequest request = WebRequest.Create("https://api.spotify.com/v1/me/top/artists");
                 request.Method = "GET";
                 request.Headers.Add("Authorization", "Bearer " + Program.auth);
                 request.ContentType = "application/json; charset=utf-8";
@@ -27,7 +27,7 @@ namespace SpotifyX_Console.Spotify
                     string responseFromServer = reader.ReadToEnd();
                     Console.WriteLine(responseFromServer);
                 }
-             }
+            }
             catch (Exception e)
             {
                 Console.WriteLine(e);
