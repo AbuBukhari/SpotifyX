@@ -7,7 +7,6 @@ using System.Net;
 using Colorful;
 using Console = Colorful.Console;
 using System.Drawing;
-using SpotifyAPI.Web;
 using SpotifyX_Console.Spotify;
 using System.IO;
 using System.Threading;
