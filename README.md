@@ -1,5 +1,5 @@
 # About SpotifyX
- State: Completed!
+ State: Completed but this will be updated!
  
  Trello: Completed!
  
