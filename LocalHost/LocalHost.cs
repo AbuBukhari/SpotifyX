@@ -54,7 +54,7 @@ namespace SpotifyX_Console.LocalHost
                     Program.Token_user = Splitter(Context, "/?code=", "&state");
                 }
                 byte[] _responseArray = Encoding.UTF8.GetBytes("<html><head><title>SpotifyX</title></head>" +
-                "<body> Please hold this on the background. You can exit this when your in the main menu - <strong>SpotifyX</strong></body></html>"); 
+                "<body style='background-color=#65000b'> Please hold this on the background. You can exit this when your in the main menu - <strong>SpotifyX</strong></body></html>"); 
                 context.Response.OutputStream.Write(_responseArray, 0, _responseArray.Length); 
                 context.Response.KeepAlive = false; 
                 context.Response.Close(); 
