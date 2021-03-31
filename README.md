@@ -1,12 +1,14 @@
 # About SpotifyX
- State: Heavely under developement! 
+ State: Completed!
  
- Trello: https://trello.com/b/JSg4ao5B/spotifyx
+ Trello: Completed!
  
  Languages: Fully C#
 
 ## What it will do: 
-It will show your Favorite number/artist on spotify!
+It will show your Favorite artist on spotify!
+
+![alt text](https://image.prntscr.com/image/Z7A4XzHhTyGI6uJo3gR-Kw.png)
 
 ## How it will work:
 It will first host a localhost file. then it will work with the apis of spotify.
