@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,7 +11,7 @@ namespace SpotifyX_Console.Logger
     {
         public static string Logg(string text)
         {
-            File.AppendAllText($"Temp\\{Program.name}.txt", $"[SpotifyX Date: {DateTime.Now.ToString("H.mm.ss")}] {text}" + Environment.NewLine);
+            File.AppendAllText($"Loggs\\{Program.name}.txt", $"[SpotifyX Date: {DateTime.Now.ToString("H.mm.ss")}] {text}" + Environment.NewLine);
             return text;
         }
     }
