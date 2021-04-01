@@ -1,5 +1,5 @@
 # About SpotifyX
- State: Completed but it will be updated!
+ State: Console version Completed! there will be different version!
  
  Trello: Completed!
  
