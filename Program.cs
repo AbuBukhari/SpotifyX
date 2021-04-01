@@ -18,12 +18,12 @@ namespace SpotifyX_Console
 {
     class Program
     {
+        public static string date = DateTime.Now.ToString("MM/dd/yyyy");
         public static string Token = "";
         public static string Token_user = "";
         public static string auth = "";
         public static string refreshToken = "";
-        public static string name = Guid.NewGuid().ToString();
-        public static bool result;
+        public static string name =  date  + " - " + Guid.NewGuid().ToString("").Substring(0, 16);
 
         static void Main(string[] args)
         {
@@ -33,13 +33,13 @@ namespace SpotifyX_Console
             Console.Clear();
             Console.ForegroundColor = Color.FromArgb(30, 215, 96);
             Console.Title = "SpotifyX - Waiting for user | Created by Vanix";
-            if(!Directory.Exists("Temp"))
+            if(!Directory.Exists("Loggs"))
             {
-               Directory.CreateDirectory("Temp");     
+               Directory.CreateDirectory("Loggs");     
             }
-            if(!File.Exists($"Temp\\{name}.txt"))
+            if(!File.Exists($"Loggs\\{name}.txt"))
             {
-                var k = File.Create($"Temp\\{name}.txt");
+                var k = File.Create($"Loggs\\{name}.txt");
                 k.Close();
             }
             Logger.Logger.Logg("Trying to logg in....");
