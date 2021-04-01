@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -49,13 +49,38 @@ namespace SpotifyX_Console.LocalHost
                 context = _httpListener.GetContext();
                 var request = context.Request;
                 Context = request.Url.PathAndQuery;
+                
                 if (Context.Contains("/?code"))
                 {
                     Program.Token_user = Splitter(Context, "/?code=", "&state");
-                    Program.result = true;
                 }
-                byte[] _responseArray = Encoding.UTF8.GetBytes("<html><head><title>SpotifyX</title></head>" +
-                "<body style='background-color=#65000b'> Please hold this on the background. You can exit this when your in the main menu - <strong>SpotifyX</strong></body></html>"); 
+                byte[] _responseArray = Encoding.UTF8.GetBytes(@"
+<html>
+<head>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&family=Source+Sans+Pro:ital,wght@0,200;1,300&display=swap');
+body{
+    background-color: #1DB954;
+   font-family: 'Source Sans Pro', sans-serif;
+}
+p{
+    color: #191414;
+   font-size: 30px;
+}
+img{
+  width: 150px;
+  text-align:center;
+}
+
+</style>
+
+  <title> SpotifyX - Key system </title>
+ <link rel = 'stylesheet' type = 'text/css' href = 'styles.css' >
+</head>
+<body>
+<p style='text-align:center;'><img src='https://cdn.discordapp.com/attachments/792479438532509697/827120284959113246/Spotify_Logo_RGB_White.png' alt='logo'></p>
+  <p style='text-align:center'> Please exit the website. SpotifyX got the key! - SpotifyX Key system<p>
+</html>");
                 context.Response.OutputStream.Write(_responseArray, 0, _responseArray.Length); 
                 context.Response.KeepAlive = false; 
                 context.Response.Close(); 
