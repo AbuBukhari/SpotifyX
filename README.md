@@ -11,6 +11,7 @@
 It will show your Favorite artist on spotify!
 
 ![alt text](https://image.prntscr.com/image/Z7A4XzHhTyGI6uJo3gR-Kw.png)
+![alt text](http://i.prntscr.com/bJWBdlIiRMGp3rnj6f6LhQ.png)
 
 ## DLLS
 
