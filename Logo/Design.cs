@@ -24,7 +24,7 @@ namespace SpotifyX_Console.Logo
     /_/                    /____/        
 
                                                        
-     [https://github.com/Vanix599]                    
+     [https://github.com/Vanix-k3rnel / https://github.com/Rezoid]                    
                                 
 ", Color.FromArgb(30, 215, 96));
             Console.WriteLine();

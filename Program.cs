@@ -18,17 +18,18 @@ namespace SpotifyX_Console
 {
     class Program
     {
-        public static string date = DateTime.Now.ToString("MM/dd/yyyy");
+        public static string date = DateTime.Now.ToString("MM-dd-yyyy");
         public static string Token = "";
         public static string Token_user = "";
         public static string auth = "";
         public static string refreshToken = "";
-        public static string name =  date  + " - " + Guid.NewGuid().ToString("").Substring(0, 16);
+        public static string name =  date  + " - " + Guid.NewGuid().ToString("").Substring(0, 12);
 
         static void Main(string[] args)
         {
             // Color.FromArgb(30, 215, 96)  =  Spotify Green color
             // Color.FromArgb(25, 20, 20) =  Spotify Black color
+            
             Console.BackgroundColor = Color.FromArgb(25, 20, 20);
             Console.Clear();
             Console.ForegroundColor = Color.FromArgb(30, 215, 96);
@@ -46,9 +47,14 @@ namespace SpotifyX_Console
             LocalHost.LocalHost.host();
             Console.WriteLine("Auth....");
             Logger.Logger.Logg("Started a process");
-            System.Diagnostics.Process.Start("https://accounts.spotify.com/authorize?client_id=dcf7c38d3cb0434fb4fdb6ac3f736f04&response_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A8080%2F&callback&scope=user-read-private%20user-read-email%20user-top-read&state=34fFs29kd09");
-            Console.WriteLine("Press enter if there is /?key in the url");
-            Console.ReadLine();
+            System.Diagnostics.Process.Start("https://accounts.spotify.com/authorize?client_id=dcf7c38d3cb0434fb4fdb6ac3f736f04&response_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A8080%2F&callback&scope=user-read-private%20user-read-email%20user-top-read%20user-read-currently-playing&state=34fFs29kd09");
+            while (true)
+            {
+                if (LocalHost.LocalHost.checker == 1)
+                {
+                    break;
+                }
+            }
 
                 Auth_Spotify.Access();
                 Thread.Sleep(500);

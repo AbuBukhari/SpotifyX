@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -42,6 +42,7 @@ namespace SpotifyX_Console.LocalHost
 
         public static HttpListenerContext context;
         public static string Context = "";
+        public static int checker = 0;
         static void ResponseThread()
         {
             while (true)
@@ -53,6 +54,7 @@ namespace SpotifyX_Console.LocalHost
                 if (Context.Contains("/?code"))
                 {
                     Program.Token_user = Splitter(Context, "/?code=", "&state");
+                    checker = 1;
                 }
                 byte[] _responseArray = Encoding.UTF8.GetBytes(@"
 <html>
@@ -75,7 +77,6 @@ img{
 </style>
 
   <title> SpotifyX - Key system </title>
- <link rel = 'stylesheet' type = 'text/css' href = 'styles.css' >
 </head>
 <body>
 <p style='text-align:center;'><img src='https://cdn.discordapp.com/attachments/792479438532509697/827120284959113246/Spotify_Logo_RGB_White.png' alt='logo'></p>

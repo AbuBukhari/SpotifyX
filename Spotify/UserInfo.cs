@@ -14,6 +14,7 @@ namespace SpotifyX_Console.Spotify
 {
     class UserInfo
     {
+        public static string k;
         public static void access()
         {
             try
@@ -30,6 +31,7 @@ namespace SpotifyX_Console.Spotify
                     StreamReader reader = new StreamReader(dataStream);
                     string responseFromServer = reader.ReadToEnd();
                     string name = Regex.Match(responseFromServer, "\"display_name\" : \"(.*?)\",").Groups[1].Value.ToString();
+                    k = name;
                     string country = Regex.Match(responseFromServer, "\"country\" : \"(.*?)\",").Groups[1].Value.ToString();
                     bool premium = Regex.Match(responseFromServer, "\"product\" : \"premium\",").Success;
                     Console.Title = $"[SpotifyX]  Name: {name} | Country: {country} - Created by Vanix";
